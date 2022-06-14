@@ -3,11 +3,8 @@ from os import rename
 from os.path import exists
 import uuid
 
-from sqlalchemy.orm import Session
-from fastapi import status, APIRouter, UploadFile, File, Depends
-
+from fastapi import status, APIRouter, UploadFile, File
 from app.utils import  error_uploading_file, is_valid_image_file
-from app.database import get_db
 
 router = APIRouter(
     prefix='/file',
@@ -16,7 +13,7 @@ router = APIRouter(
 
 
 @router.post("/upload", status_code=status.HTTP_201_CREATED)
-async def upload_a_file(file: UploadFile = File(...),  db: Session = Depends(get_db)):
+async def upload_a_file(file: UploadFile = File(...)):
     try:
         is_valid_image_file(file.filename)
         try:
