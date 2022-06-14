@@ -1,0 +1,3 @@
+Creating this empty file so that when `alembic` commands are run for the first time
+in the system, one does not have to manually create the versions folder inside the
+alembic directory.
