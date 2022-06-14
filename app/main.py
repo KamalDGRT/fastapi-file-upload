@@ -3,18 +3,22 @@
 
 from fastapi import FastAPI
 
+from app.routers import file
+
 # Import your routers here
 # example: from app.routers import module1
 
 app = FastAPI(
-    title="Your App Title",
-    description="Add description on what the app is for.",
+    title="File Uploader API",
+    description="API example to upload file to server :))",
     version="0.1.0",
     contact={
         "name": "Your Name",
         "url": "http://you-own-url.com"
     }
 )
+
+app.include_router(file.router)
 
 # use the imported router in your project here:
 # app.include_router(module1.router)

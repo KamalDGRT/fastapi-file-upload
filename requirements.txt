@@ -1,9 +1,6 @@
 fastapi[all]
 autopep8
-sqlalchemy
-alembic
 passlib[bcrypt]
 python-jose[cryptography]
-mysqlclient
 gunicorn
 wheel
